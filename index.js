@@ -1,10 +1,10 @@
 $(document).ready(function (){
   var searchRepositories = () => {
-  const searchTerms = $('#searchTerms').val()
-  $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
-      $('#results').html(renderSearchResults(data))
+  const search = $('#search').val()
+  $.get(`https://api.github.com/search/repositories?q=${search}`, data => {
+      $('#results').html(showSearchResults(data))
     }).fail(error => {
-      displayError()
+      showError()
     })
   }
   
