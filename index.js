@@ -4,7 +4,7 @@ $(document).ready(function (){
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
       $('#results').html(showSearchResults(data))
     }).fail(error => {
-      showError()
+      displayError ()
     })
   }
   
@@ -34,9 +34,9 @@ $(document).ready(function (){
     $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`, data => {
       $('#details').html(renderCommits(data))
     }).fail(error => {
-      showError()
+      displayError ()
     })
   }
   
-  let showError = () => $('#errors').html("there's been an error. Please try again.")
+  let displayError  = () => $('#errors').html("there's been an error. Please try again.")
 });
