@@ -7,4 +7,6 @@ $(document).ready(function (){
       displayError()
     })
   }
+  
+  var showError = () => $('#errors').html("there's been an error. Please try again.")
 });
