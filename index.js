@@ -26,7 +26,7 @@ $(document).ready(function (){
   }
 
   let renderCommits = (data) => {
-    let result = data.map((commit)=>renderCommit(commit)).join('')
+    let result = data.map((commit)=>showCommit(commit)).join('')
     return `<ul>${result}</ul>`
   }
 
@@ -34,7 +34,7 @@ $(document).ready(function (){
     $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`, data => {
       $('#details').html(renderCommits(data))
     }).fail(error => {
-      displayError()
+      showError()
     })
   }
   
