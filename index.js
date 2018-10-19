@@ -1,5 +1,5 @@
 $(document).ready(function (){
-  var searchRepositories = () => {
+  let searchRepositories = () => {
   const searchTerms  = $('#searchTerms ').val()
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
       $('#results').html(showSearchResults(data))
@@ -8,5 +8,7 @@ $(document).ready(function (){
     })
   }
   
-  var showError = () => $('#errors').html("there's been an error. Please try again.")
+  let renderSearchResults = (data) => data.items.map( result => renderSearchResult(result))
+  
+  let showError = () => $('#errors').html("there's been an error. Please try again.")
 });
