@@ -8,7 +8,7 @@ $(document).ready(function (){
     })
   }
   
-  let showSearchResults = (data) => data.items.map( result => renderSearchResult(result))
+  let showSearchResults = (data) => data.items.map( result => showSearchResult(result))
   
   let showError = () => $('#errors').html("there's been an error. Please try again.")
 });
