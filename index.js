@@ -4,7 +4,7 @@ $(document).ready(function (){
   $.get(`https://api.github.com/search/repositories?q=${searchTerms}`, data => {
       $('#results').html(showSearchResults(data))
     }).fail(error => {
-      displayError ()
+      displayError()
     })
   }
   
@@ -34,7 +34,7 @@ $(document).ready(function (){
     $.get(`https://api.github.com/repos/${el.dataset.owner}/${el.dataset.repository}/commits`, data => {
       $('#details').html(renderCommits(data))
     }).fail(error => {
-      displayError ()
+      displayError()
     })
   }
   
